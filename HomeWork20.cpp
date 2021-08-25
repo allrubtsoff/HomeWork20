@@ -1,45 +1,26 @@
 ﻿#include <iostream>
+#include <string>
 
-enum class Result
+struct Bag
 {
-    SUCCESS,
-    FAIL,
-    ERROR_WRITE,
-    ERROR_READ
+	std::string books[1];
 };
 
-enum class Another
+struct Student
 {
-    WORK,
-    SUCCESS
-};
+	int Age = 0;
+	int Height = 0;
+	std::string Name = 0;
+	Bag myBag;
 
-Result DoWork()
-{
-    return Result::ERROR_WRITE;
-}
-
-enum Alphabet
-{
-    A,
-    B,
-    C
+	void GetInfo()
+	{
+		std::cout << "student struct";
+	}
 };
 
 int main()
 {
-    Result workResult = DoWork();
-    std::cout << static_cast<int>(workResult);
-    static_cast<Result>(3);
-    if (workResult == Result::SUCCESS)
-    {
-        
-    }
-    Another anotherRes = Another::WORK;
-    //if (workResult == anotherRes)
-    {
-
-    }
-
+	Student* ptr = new Student{ 10, 100, "Paul" };
+	ptr->GetInfo();
 }
-
