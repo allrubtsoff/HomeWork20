@@ -11,7 +11,7 @@ struct Student
 	int Age = 0;
 	int Height = 0;
 	std::string Name = 0;
-	Bag myBag;
+	Bag* myBag = nullptr;
 
 	void GetInfo()
 	{
